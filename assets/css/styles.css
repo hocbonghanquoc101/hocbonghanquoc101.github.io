@@ -1,5 +1,19 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+@font-face {
+  font-family: 'TT Norms';
+  src: url('../fonts/TTNormsPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Norms Bold';
+  src: url('../fonts/TTNormsPro-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -13,9 +27,14 @@
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
 
-  /*Green gradient*/
+  /*Green gradient
   --body-color: linear-gradient(90deg, hsl(104, 28%, 40%) 0%, hsl(58, 28%, 40%) 100%);
   --container-color: linear-gradient(136deg, hsl(104, 28%, 35%) 0%, hsl(58, 28%, 35%) 100%);
+*/
+
+--body-color: linear-gradient(90deg, #c4f0fc 0%, #dce9e9 100%);
+--container-color: linear-gradient(136deg, #dce9e9 0%, #c4f0fc 100%);
+/*--body-color: linear-gradient(90deg, #bef1f9 0%, #d6c8f8 100%);*/
   
   /*Red gradient*/
   /* --body-color: linear-gradient(90deg, hsl(360, 28%, 40%) 0%, hsl(18, 28%, 40%) 100%);
@@ -261,9 +280,14 @@ button{
 }
 
 .home__group{
+  order: 2;
   display: grid;
   position: relative;
   padding-top: 2rem;
+}
+
+.home__data {
+  order: 1; /* Cho text sang trái */
 }
 
 .home__img{
@@ -310,19 +334,28 @@ button{
 }
 
 .home__title{
-  font-size: var(--biggest-font-size);
-  font-weight: var(--font-black);
+  font-family: 'TT Norms', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Tự động scale từ 40px–56px */
+  font-weight: 400;
   line-height: 109%;
   margin-bottom: var(--mb-1);
+  color: #000000;
 }
 
 .home__description{
+  font-family: 'TT Norms Bold', sans-serif;
+  white-space: nowrap;
+  font-size: clamp(3rem, 6vw, 4.5rem); /* 48px–72px */
+  font-weight: 800;
   margin-bottom: var(--mb-1);
+  color: #000000;
 }
 
 .home__buttons{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem; /* hoặc 0.5rem nếu muốn gần hơn nữa */
+  flex-wrap: wrap; /* giúp không bị tràn trên mobile */
 }
 
 /* Swiper Class */
@@ -349,18 +382,32 @@ button{
 }
 
 /*=============== BUTTONS ===============*/
-.button{
+.button {
+  font-family: 'TT Norms', sans-serif;
+  font-size: 1.125rem; /* 18px */
   display: inline-block;
-  background-color: var(--first-color);
-  color: var(--title-color);
-  padding: 1rem 1.75rem;
-  border-radius: .5rem;
-  font-weight: var(--font-medium);
-  transition: .3s;
+  padding: 0.75rem 2rem;
+  border-radius: 999px; /* 🔵 Làm nút bo tròn hoàn toàn */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
-.button:hover{
-  background-color: var(--first-color-alt);
+.button:hover {
+  background-color: #b2dfdb; /* Soft teal for hover */
+  color: #000000; /* Keep text black */
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* 👈 Màu viền xám nhạt */
+  color: #000;
 }
 
 .button__icon{
@@ -383,6 +430,7 @@ button{
 }
 
 .button--flex{
+  align-items: baseline;
   display: inline-flex;
   align-items: center;
   column-gap: .5rem;
@@ -713,6 +761,7 @@ button{
   text-align: center;
   font-size: var(--smaller-font-size);
   margin-top: 4.5rem;
+  color: #000000;
 }
 
 /*=============== SCROLL UP ===============*/
@@ -827,6 +876,7 @@ button{
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
+  
   .home__img{
     height: 300px;
   }
@@ -899,6 +949,7 @@ button{
   .section__title{
     font-size: var(--h1-font-size);
     margin-bottom: 3rem;
+    color: #000000
   }
 
   .home__content{
@@ -949,6 +1000,7 @@ button{
   }
   .about__description{
     padding-right: 2rem;
+    color: #000000
   }
 
   .trick__container{
@@ -1012,3 +1064,4 @@ button{
   50%  { transform: translate(0, 15px); }
   100%   { transform: translate(0, -0px); }   
 }
+
