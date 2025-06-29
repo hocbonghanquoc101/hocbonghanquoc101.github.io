@@ -1,14 +1,45 @@
-# Responsive Halloween Website 🎃
-## [Watch it on youtube](https://youtu.be/lgo1CEPZoxg)
-### Responsive Halloween Website 🎃
+# 🎓 The Viet Alunet – Học bổng Hàn Quốc 101
+---
 
-- Responsive Halloween Website Using HTML, CSS & JavaScript.
-- Contains animations when scrolling.
-- It has three color designs (green, red and black)
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+## 🛠️ Features
 
-Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
+- ✅ **Responsive Layout** across mobile, tablet, desktop
+- 🎓 Highlighted information about:
+  - Học bổng GKS
+  - Học bổng RA/TA
+  - Học bổng Quỹ/Doanh nghiệp
+- 📚 Showcase publications and member contributions
+- 📬 Newsletter subscription section
+- 🎨 Styled using custom CSS and Swiper.js
+- 🔄 Smooth transitions with ScrollReveal
 
-![halloween](/preview.png)
+---
+
+## 🔧 Setup Instructions
+
+1. Clone or download the repository.
+2. Make sure all assets are in the correct relative paths (`assets/img`, `assets/css`, `assets/js`).
+3. Open `index.html` in your preferred browser.
+
+No npm install or build step is required — it's **fully static**.
+
+---
+
+## 📦 External Dependencies
+
+- [Boxicons](https://boxicons.com/)
+- [Swiper.js](https://swiperjs.com/)
+- [ScrollReveal](https://scrollrevealjs.org/)
+
+---
+
+## ✨ License
+
+MIT – free to use, modify, and share.
+
+---
+
+## 💡 Credits
+
+Built by **The Viet Alunet** team (creator: [Lê Đình Tuấn](https://github.com/tuan-ld)), dedicated to connecting Vietnamese scholars around the world.
+
