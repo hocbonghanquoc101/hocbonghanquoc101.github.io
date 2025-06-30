@@ -422,7 +422,7 @@ button{
 }
 
 .category__img{
-  width: 120px;
+  width: 150px;
   margin-bottom: var(--mb-0-75);
   transition: .3s;
 }
@@ -436,7 +436,7 @@ button{
 }
 
 .category__img-wrapper {
-  height: 120px; /* hoặc giá trị phù hợp */
+  height: 150px; /* hoặc giá trị phù hợp */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -987,7 +987,7 @@ button{
     column-gap: 8rem;
   }
   .category__img{
-    width: 200px;
+    width: 250px;
   }
 
   .about__container{
