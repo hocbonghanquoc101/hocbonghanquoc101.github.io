@@ -29,7 +29,7 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== HOME SWIPER ===============*/
+/*=============== HOME SWIPER ===============
 let homeSwiper = new Swiper(".home-swiper", {
     spaceBetween: 30,
     loop: 'true',
@@ -39,6 +39,19 @@ let homeSwiper = new Swiper(".home-swiper", {
         clickable: true,
       },
 })
+*/
+
+/*=============== HOME SWIPER ===============*/
+let homeSwiper = new Swiper(".home-swiper", {
+    spaceBetween: 30,
+    loop: false, // Disable looping (no need with one slide)
+    allowTouchMove: false, // Disable swipe gestures
+    pagination: false, // Disable pagination dots
+    navigation: false, // Disable navigation arrows (if applicable)
+    autoplay: false // Disable autoplay (if applicable)
+});
+
+
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
@@ -88,8 +101,8 @@ window.addEventListener('scroll', scrollUp)
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2500,
-    delay: 400,
+    duration: 1000,
+    delay: 150,
     // reset: true
 })
 

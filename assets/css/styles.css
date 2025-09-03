@@ -5,17 +5,31 @@
 :root {
   --header-height: 3.5rem;
 
-  /*========== Colors ==========*/
+  /*========== Colors ==========
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
   --first-color-alt: hsl(var(--hue), 91%, 50%);
   --title-color: hsl(var(--hue), 4%, 100%);
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
+  */
 
-  /*Green gradient*/
+  --first-color: hsl(var(--hue), 91%, 54%);
+  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --title-color: #000000;     
+  --text-color: #1a1a1a;   
+  --text-color-light: #555555;  
+
+  /*Green gradient
   --body-color: linear-gradient(90deg, hsl(104, 28%, 40%) 0%, hsl(58, 28%, 40%) 100%);
   --container-color: linear-gradient(136deg, hsl(104, 28%, 35%) 0%, hsl(58, 28%, 35%) 100%);
+*/
+
+--body-color: linear-gradient(90deg, hsl(195, 86%, 86%) 0%, hsl(12, 83%, 97%) 100%);
+--container-color: linear-gradient(90deg, hsl(195, 86%, 82%) 0%, hsl(12, 83%, 93%) 100%);
+--reverved-container-color: linear-gradient(90deg, hsl(12, 83%, 93%) 0%, hsl(195, 86%, 82%) 100%);
+
+/*#cdffd8 0%, #94b9ff*/
   
   /*Red gradient*/
   /* --body-color: linear-gradient(90deg, hsl(360, 28%, 40%) 0%, hsl(18, 28%, 40%) 100%);
@@ -57,8 +71,8 @@
 /* Responsive typography */
 @media screen and (min-width: 992px) {
   :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 3rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -122,7 +136,7 @@ button{
 }
 
 .section__title{
-  font-size: var(--h2-font-size);
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-2);
   text-align: center;
 }
@@ -162,13 +176,18 @@ button{
 
 .nav__logo{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   column-gap: .5rem;
   font-weight: var(--font-medium);
 }
 
+.nav__logo-text {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
 .nav__logo-img{
-  width: 1.25rem;
+  width: 2.5rem;
 }
 
 .nav__link,
@@ -221,7 +240,7 @@ button{
 
 .nav__link{
   text-transform: uppercase;
-  font-weight: var(--font-black);
+  font-weight: var(--font-semi-bold);
   transition: .4s;
 }
 
@@ -266,11 +285,6 @@ button{
   padding-top: 2rem;
 }
 
-.home__img{
-  height: 250px;
-  justify-self: center;
-}
-
 .home__indicator{
   width: 8px;
   height: 8px;
@@ -304,16 +318,17 @@ button{
 }
 
 .home__subtitle{
-  font-size: var(--h3-font-size);
+  font-size: var(--h2-font-size);
   text-transform: uppercase;
   margin-bottom: var(--mb-1);
 }
 
 .home__title{
   font-size: var(--biggest-font-size);
-  font-weight: var(--font-black);
+  font-weight: var(--font-semi-bold);
   line-height: 109%;
   margin-bottom: var(--mb-1);
+  color: #000000;
 }
 
 .home__description{
@@ -349,18 +364,25 @@ button{
 }
 
 /*=============== BUTTONS ===============*/
-.button{
+
+.button {
   display: inline-block;
-  background-color: var(--first-color);
-  color: var(--title-color);
-  padding: 1rem 1.75rem;
-  border-radius: .5rem;
-  font-weight: var(--font-medium);
-  transition: .3s;
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 999px;
+  font-size: clamp(0.875rem, 1vw + 0.2rem, 1rem);
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
-.button:hover{
-  background-color: var(--first-color-alt);
+.button:hover {
+  background-color: #b2dfdb; /* Soft teal for hover */
+  color: #000000; /* Keep text black */
 }
 
 .button__icon{
@@ -372,6 +394,7 @@ button{
   background-color: transparent;
   border-radius: 3rem;
   padding: .75rem 1.5rem;
+  white-space: nowrap;
 }
 
 .button--ghost:hover{
@@ -399,7 +422,7 @@ button{
 }
 
 .category__img{
-  width: 120px;
+  width: 150px;
   margin-bottom: var(--mb-0-75);
   transition: .3s;
 }
@@ -410,6 +433,14 @@ button{
 
 .category__data:hover .category__img{
   transform: translateY(-.5rem);
+}
+
+.category__img-wrapper {
+  height: 150px; /* hoặc giá trị phù hợp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 /*=============== ABOUT ===============*/
@@ -538,7 +569,7 @@ button{
   position: absolute;
   top: 8%;
   left: 8%;
-  background-color: var(--first-color);
+  background: var(--body-color);
   color: var(--title-color);
   font-size: var(--small-font-size);
   padding: .25rem .5rem;
@@ -609,6 +640,13 @@ button{
   border-radius: .75rem;
 }
 
+.newsletter__form .button {
+  padding: 0.6rem 1.5rem;
+  font-size: clamp(0.875rem, 1vw + 0.2rem, 1rem);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .newsletter__input{
   width: 70%;
   padding: 0 .5rem;
@@ -633,13 +671,13 @@ button{
 }
 
 .footer__img-one{
-  width: 100px;
+  width: 170px;
   top: 6rem;
   right: -2rem;
 }
 
 .footer__img-two{
-  width: 150px;
+  width: 200px;
   bottom: 4rem;
   right: 4rem;
 }
@@ -764,7 +802,7 @@ button{
   }
 
   .home__img{
-    height: 200px;
+    height: 280px;
   }
   .home__buttons{
     flex-direction: column;
@@ -786,6 +824,10 @@ button{
     justify-content: center;
   }
 
+  .home__img{
+    height: 350px;
+    transform: none;
+  }
   .newsletter__container{
     display: grid;
     grid-template-columns: .7fr;
@@ -801,6 +843,16 @@ button{
     margin: 0;
   }
 
+.home__img{
+  height: 350px;
+  justify-self: center;
+}
+
+  .footer__img-one{
+  width: 150px;
+  top: -1rem;
+  right: -2rem;
+  }
   .section{
     padding: 7rem 0 2rem;
   }
@@ -826,9 +878,6 @@ button{
     padding: 8rem 0 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
-  }
-  .home__img{
-    height: 300px;
   }
   .swiper-pagination{
     margin-top: var(--mb-2);
@@ -909,8 +958,8 @@ button{
     padding-top: 0;
   }
   .home__img{
-    height: 400px;
-    transform: translateY(-3rem);
+    height: 450px;
+    transform: none;
   }
   .home__indicator{
     top: initial;
@@ -938,14 +987,14 @@ button{
     column-gap: 8rem;
   }
   .category__img{
-    width: 200px;
+    width: 250px;
   }
 
   .about__container{
     column-gap: 7rem;
   }
   .about__img{
-    width: 350px;
+    width: 300px;
   }
   .about__description{
     padding-right: 2rem;
@@ -991,16 +1040,16 @@ button{
 
 @media screen and (min-width: 1200px){
   .home__img{
-    height: 420px;
+    height: 450px;
   }
   .swiper-pagination{
     margin-top: var(--mb-2-5);
   }
   .footer__img-one{
-    width: 120px;
+    width: 170px;
   }
   .footer__img-two{
-    width: 180px;
+    width: 200px;
     top: 30%;
     left: -3%;
   }
@@ -1012,3 +1061,4 @@ button{
   50%  { transform: translate(0, 15px); }
   100%   { transform: translate(0, -0px); }   
 }
+
